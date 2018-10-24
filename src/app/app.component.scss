@@ -1,4 +1,7 @@
 $drag-list-bg-color: #ccc;
+$drag-list-header-bg-color: #cac;
+
+$default-dnd-transition: transform 200ms cubic-bezier(0.2, 0, 0, 1);
 
 .item {
     padding: 20px 10px;
@@ -27,11 +30,11 @@ $drag-list-bg-color: #ccc;
   }
 
   .cdk-drag-animating {
-    transition: transform 200ms cubic-bezier(0.2, 0, 0, 1);
+    transition: $default-dnd-transition;
   }
 
   .drop-list-container.cdk-drop-list-dragging .item:not(.cdk-drag-placeholder) {
-    transition: transform 200ms cubic-bezier(0.2, 0, 0, 1);
+    transition: $default-dnd-transition;
   }
 
   .item:last-child {
@@ -46,6 +49,8 @@ $drag-list-bg-color: #ccc;
     width: 25%;
     background-color: $drag-list-bg-color;
     margin: 10px;
+    display: flex;
+    flex-direction: column;
     box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
                 0 8px 10px 1px rgba(0, 0, 0, 0.14),
                 0 3px 14px 2px rgba(0, 0, 0, 0.12);
@@ -57,4 +62,36 @@ $drag-list-bg-color: #ccc;
 
 .blue-border {
     border: 1px solid #ccc;
+}
+
+.drop-list-container__header {
+    background-color: $drag-list-header-bg-color;
+    height: 40px;
+    padding: 2px 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.drop-list-container__new-item {
+    a.action-link {
+        border: 1px dashed lighten( $drag-list-bg-color, 50% );
+        border-radius: 2px;
+        color: lighten( $drag-list-bg-color, 50% );
+        min-width: 50px;
+        margin: 3px 3px;
+        text-align: center;
+        text-decoration: none;
+    }
+    h2 {
+        margin: 0;
+    }
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-top: auto;
+    padding: 15px 5px;
 }

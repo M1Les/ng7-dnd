@@ -1,20 +1,30 @@
 <div style="display: flex;">
-<div cdkDropList 
-#firstList="cdkDropList"
-  [cdkDropListData]="numbers"
-(cdkDropListDropped)="drop($event)"
-[cdkDropListConnectedTo]="otherList"
- class="drop-list-container red-border">
-  <div cdkDrag *ngFor="let number of numbers" class="item">{{number}}</div>
-</div>
-<div cdkDropList
-#otherList="cdkDropList"
-  [cdkDropListData]="otherNumbers"
+  <div cdkDropList 
+  #firstList="cdkDropList"
+    [cdkDropListData]="numbers"
   (cdkDropListDropped)="drop($event)"
-  [cdkDropListConnectedTo]="firstList"
-   class="drop-list-container blue-border">
-  <div cdkDrag *ngFor="let number of otherNumbers" class="item">{{number}}</div>
-</div>
+  [cdkDropListConnectedTo]="otherList"
+  class="drop-list-container red-border">
+    <div class="drop-list-container__header">
+      <h3>Monday</h3>
+    </div>
+    <div cdkDrag *ngFor="let number of numbers" class="item">{{number}}</div>
+    <div class="drop-list-container__new-item">
+      <a class="action-link" href="#"><h2>+</h2></a>
+    </div>
+  </div>
+
+  <div cdkDropList
+  #otherList="cdkDropList"
+    [cdkDropListData]="otherNumbers"
+    (cdkDropListDropped)="drop($event)"
+    [cdkDropListConnectedTo]="firstList"
+    class="drop-list-container blue-border">
+    <div class="drop-list-container__header">
+      <h3>Tuesday</h3>
+    </div>
+    <div cdkDrag *ngFor="let number of otherNumbers" class="item">{{number}}</div>
+  </div>
 </div>
 
 <router-outlet></router-outlet>
