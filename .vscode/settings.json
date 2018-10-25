@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/561b0aa5-916f-4570-8d72-8b9ee0a755b7/resourceGroups/rg-westus2-prototype2-ng7/providers/Microsoft.Web/sites/webapp-prototype-ng7-dnd",
+    "appService.deploySubpath": "dist\\ng7-dnd"
+}
